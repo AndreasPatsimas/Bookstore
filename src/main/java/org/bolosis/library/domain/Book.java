@@ -3,7 +3,6 @@ package org.bolosis.library.domain;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.PositiveOrZero;
 import java.time.LocalDate;
 
 @Data
@@ -26,14 +25,12 @@ public class Book {
     @Column(name = "author", nullable = false)
     private String author;
 
-    @PositiveOrZero
     @Column(name = "number_pages", nullable = false)
     private int numberOfPages;
 
     @Column(name = "creation_date", nullable = false)
     private LocalDate creationDate;
 
-    @PositiveOrZero
     @Column(name = "copies", nullable = false)
     private int copies;
 }
