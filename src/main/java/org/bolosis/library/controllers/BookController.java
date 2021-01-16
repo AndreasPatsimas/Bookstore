@@ -44,8 +44,7 @@ public class BookController {
         return ResponseEntity.ok("Successful Order");
     }
 
-    @PostMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
-            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<?> insertBook(@RequestBody BookRequestDto bookRequestDto){
 
         log.info("Insert book {}", bookRequestDto);
@@ -53,8 +52,7 @@ public class BookController {
         return ResponseEntity.ok("Insert completed");
     }
 
-    @PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
-            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<?> updateBook(@PathVariable("id") Long id,
                                         @RequestBody BookRequestDto bookRequestDto){
 
@@ -63,7 +61,7 @@ public class BookController {
         return ResponseEntity.ok("Update completed");
     }
 
-    @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity<?> deleteBook(@PathVariable("id") Long id){
 
         log.info("Delete book by id: {}", id);
